@@ -72,16 +72,6 @@ def delchar(s,c):
         out=out+v[i]
   return(out)
 
-def shuffle(l1,l2):
-    c=[]
-    if len(l1)!=0 and len(l2)!=0:
-      for i in range(min(len(l1), len(l2))):
-        c.extend([l1[i],l2[i]])      
-      c.extend(l1[i+1:] or l2[i+1:])
-    else:
-      c.extend(l1[0:] or l2[0:])      
-    return (c)
-
 """""
 *****************************************************************************************************************************************************************************************
 3.Write a function shuffle(l1,l2) that takes as input two lists, 11 and l2, and returns a list consisting of the first element in l1, then the first element in l2, then the second element in l1, then the second element in l2, and so on. If the two lists are not of equal length, the remaining elements of the longer list are appended at the end of the shuffled output.
@@ -99,31 +89,12 @@ Here are some examples to show how your function should work.
 
 ***********************************************************************CODE*****************************************************************************************************************
 """
-import ast
-
-def tolist(inp):
-  inp = "["+inp+"]"
-  inp = ast.literal_eval(inp)
-  return (inp[0],inp[1])
-
-def parse(inp):
-  inp = ast.literal_eval(inp)
-  return (inp)
-
-fncall = input()
-lparen = fncall.find("(")
-rparen = fncall.rfind(")")
-fname = fncall[:lparen]
-farg = fncall[lparen+1:rparen]
-
-if fname == "primeproduct":
-   arg = parse(farg)
-   print(primeproduct(arg))
-elif fname == "delchar":
-   (s1,s2) = parse(farg)
-   print(delchar(s1,s2))
-elif fname == "shuffle":
-   (l1,l2) = parse(farg)
-   print(shuffle(l1,l2))
-else:
-   print("Function", fname, "unknown")
+def shuffle(l1,l2):
+    c=[]
+    if len(l1)!=0 and len(l2)!=0:
+      for i in range(min(len(l1), len(l2))):
+        c.extend([l1[i],l2[i]])      
+      c.extend(l1[i+1:] or l2[i+1:])
+    else:
+      c.extend(l1[0:] or l2[0:])      
+    return (c)
