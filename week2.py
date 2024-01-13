@@ -72,6 +72,11 @@ def delchar(s,c):
         out=out+v[i]
   return(out)
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> aaaa3b1861d03788d76233f6b3b5aba03503c0b0
 """""
 *****************************************************************************************************************************************************************************************
 3.Write a function shuffle(l1,l2) that takes as input two lists, 11 and l2, and returns a list consisting of the first element in l1, then the first element in l2, then the second element in l1, then the second element in l2, and so on. If the two lists are not of equal length, the remaining elements of the longer list are appended at the end of the shuffled output.
@@ -97,4 +102,10 @@ def shuffle(l1,l2):
       c.extend(l1[i+1:] or l2[i+1:])
     else:
       c.extend(l1[0:] or l2[0:])      
+<<<<<<< HEAD
     return (c)
+=======
+    return (c)
+
+   print(shuffle(l1,l2))
+>>>>>>> aaaa3b1861d03788d76233f6b3b5aba03503c0b0
